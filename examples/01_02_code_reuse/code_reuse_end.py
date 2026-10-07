@@ -13,20 +13,25 @@ def make_chicken():
     chicken = 'a juicy chicken'
     return chicken
 
-def make_omelette(ingredients):
+def make_omelette(ingredients1):
     mix_and_cook()
     make_chicken()
-    omelette = f'a {ingredients} omelette'
+    omelette = f'a {ingredients1} and {ingredients2} omelette'
     return omelette
 
-def make_pancake(ingredients):
+def make_pancake(*ingredients):
     mix_and_cook()
     pancake = f'a {ingredients} pancake'
     return pancake
 
+def make_fancy_omelette(*ingredients):
+    mix_and_cook()
+    omelette = f'a fancy omelette with {len(ingredients)} ingredients'
+    return omelette
+
 # make breakfast for two
-barron_breakfast = make_omelette('cheese')  
-olivia_breakfast = make_pancake('bacon')
+barron_breakfast = make_fancy_omelette('cheese','mushrooms')  
+olivia_breakfast = make_pancake('bacon','eggs','cheese')
 #udita_breakfast = make_chicken()
 print(f'Barron is having {barron_breakfast}\n')
 print(f'Olivia is having {olivia_breakfast}\n')
